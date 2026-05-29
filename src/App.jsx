@@ -40,9 +40,6 @@ export default function App() {
                   audios.map(audio => (
                     <div key={audio.name} className="audio-card">
                       <audio controls src={audio.url} preload="none" />
-                      <span className="audio-label" title={audio.name}>
-                        {audio.name}
-                      </span>
                     </div>
                   ))
                 )}

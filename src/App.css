@@ -26,45 +26,32 @@
 
 /* ── Table of Contents ───────────────────────────────── */
 .toc {
-  display: inline-block;
-  min-width: 220px;
-  background: var(--accent-bg);
-  border: 1px solid var(--accent-border);
-  border-radius: 8px;
-  padding: 18px 24px 20px;
   margin-bottom: 56px;
 }
 
 .toc-heading {
-  margin: 0 0 10px;
-  font-size: 0.75rem;
+  margin: 0 0 8px;
+  font-size: 0.85rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--accent);
+  color: var(--text);
 }
 
 .toc-list {
   margin: 0;
-  padding: 0;
-  list-style: none;
-  counter-reset: toc-counter;
+  padding-left: 20px;
+  list-style: decimal;
 }
 
 .toc-list li {
-  counter-increment: toc-counter;
-  padding: 3px 0;
-  font-size: 0.9rem;
-}
-
-.toc-list li::before {
-  content: counter(toc-counter) ". ";
+  padding: 2px 0;
+  font-size: 0.92rem;
   color: var(--text);
-  opacity: 0.45;
 }
 
 .toc-list a {
-  color: var(--accent);
+  color: var(--text-h);
   text-decoration: none;
 }
 
@@ -105,32 +92,14 @@
 }
 
 .audio-card {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
   background: var(--code-bg);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 14px 16px;
-  transition: border-color 0.2s;
-
-  &:hover {
-    border-color: var(--accent-border);
-  }
+  border-radius: 40px;
+  padding: 8px 10px;
 }
 
 .audio-card audio {
   width: 100%;
-}
-
-.audio-label {
-  font-size: 0.76rem;
-  font-family: var(--mono);
-  color: var(--text);
-  opacity: 0.6;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  display: block;
 }
 
 .empty-notice {
