@@ -1,26 +1,63 @@
 [
   {
-    "id": 1,
-    "titulo": "Teste",
-    "descrição": "Amostras de áudio para demonstração.",
-    "path": "teste"
+    "id": "baseline",
+    "type": "baseline",
+    "titulo": "Modelos de Referência",
+    "descrição": "Amostras de modelos não implementados por mim, disponíveis na literatura.",
+    "models": [
+      {
+        "id": "melnet",
+        "titulo": "MelNet",
+        "descrição": "Modelo autorregressivo que opera sobre espectrogramas mel em múltiplas resoluções.",
+        "path": "melnet"
+      },
+      {
+        "id": "wavenet",
+        "titulo": "WaveNet",
+        "descrição": "Rede convolucional dilatada que gera áudio amostra por amostra no domínio do tempo.",
+        "path": "wavenet"
+      }
+    ]
   },
   {
-    "id": 2,
-    "titulo": "Teste 2",
-    "descrição": "Amostras de áudio para demonstração.",
-    "path": "teste copy"
+    "id": "vqvae-pixelcnn",
+    "type": "standard",
+    "titulo": "Gated PixelCNN no VQ-VAE",
+    "descrição": "Prior autorregressivo com Gated PixelCNN treinado sobre os códigos discretos do VQ-VAE.",
+    "path": "vqvae-pixelcnn"
   },
-    {
-    "id": 3,
-    "titulo": "Teste",
-    "descrição": "Amostras de áudio para demonstração.",
-    "path": "teste"
+  {
+    "id": "vqvae2-pixelcnn",
+    "type": "standard",
+    "titulo": "Gated PixelCNN no VQ-VAE 2",
+    "descrição": "Prior autorregressivo com Gated PixelCNN sobre a hierarquia de dois níveis do VQ-VAE 2.",
+    "path": "vqvae2-pixelcnn"
   },
-    {
-    "id": 4,
-    "titulo": "Teste",
-    "descrição": "Amostras de áudio para demonstração.",
-    "path": "teste"
+  {
+    "id": "jukebox",
+    "type": "featured",
+    "titulo": "Transformers no VQ-VAE de 3 Níveis",
+    "subtitulo": "Adaptado do Jukebox",
+    "descrição": "Modelo principal: priors autorregressivos baseados em Transformers treinados sobre cada nível de uma hierarquia VQ-VAE de 3 níveis, adaptada do Jukebox (Dhariwal et al., 2020).",
+    "subsections": [
+      {
+        "id": "jukebox-top",
+        "titulo": "Nível Superior",
+        "descrição": "Prior do nível mais abstrato da hierarquia, responsável pela estrutura de longo alcance.",
+        "path": "jukebox/top"
+      },
+      {
+        "id": "jukebox-mid",
+        "titulo": "Nível Intermediário",
+        "descrição": "Prior do nível intermediário, condicionado ao nível superior.",
+        "path": "jukebox/mid"
+      },
+      {
+        "id": "jukebox-bottom",
+        "titulo": "Nível Inferior",
+        "descrição": "Prior do nível mais fino, condicionado aos níveis superiores. Produz o áudio final após decodificação.",
+        "path": "jukebox/bottom"
+      }
+    ]
   }
 ]

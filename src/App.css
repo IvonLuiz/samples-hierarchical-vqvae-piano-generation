@@ -70,10 +70,54 @@
   }
 }
 
+.audio-section--baseline {
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 32px 36px;
+  margin-bottom: 64px;
+}
+
+.audio-section--featured {
+  border-top: 2px solid var(--text-h);
+  padding-top: 40px;
+}
+
+.section-header {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.section-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: var(--border);
+  color: var(--text);
+  flex-shrink: 0;
+}
+
+.section-badge--main {
+  background: var(--text-h);
+  color: var(--bg);
+}
+
 .section-title {
-  margin: 0 0 8px;
+  margin: 0;
   font-size: 1.45rem;
   color: var(--text-h);
+}
+
+.section-subtitle {
+  font-size: 0.95rem;
+  color: var(--text);
+  font-style: italic;
 }
 
 .section-desc {
@@ -82,6 +126,50 @@
   line-height: 1.65;
   color: var(--text);
   max-width: 680px;
+}
+
+/* ── Baseline Grid ───────────────────────────────────── */
+.baseline-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 32px;
+}
+
+.baseline-model {
+  border-left: 3px solid var(--border);
+  padding-left: 20px;
+}
+
+.baseline-model-title {
+  margin: 0 0 6px;
+  font-size: 1.1rem;
+  color: var(--text-h);
+}
+
+/* ── Featured Subsections ────────────────────────────── */
+.featured-subsections {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  margin-top: 12px;
+}
+
+.subsection {
+  padding-left: 20px;
+  border-left: 3px solid var(--text-h);
+}
+
+.subsection-title {
+  margin: 0 0 6px;
+  font-size: 1.15rem;
+  color: var(--text-h);
+}
+
+/* ── TOC indent ──────────────────────────────────────── */
+.toc-indent {
+  padding-left: 16px;
+  font-size: 0.88rem !important;
+  list-style-type: disc !important;
 }
 
 /* ── Audio Grid ──────────────────────────────────────── */
