@@ -24,14 +24,14 @@
     "type": "standard",
     "titulo": "Gated PixelCNN no VQ-VAE",
     "descrição": "Prior autorregressivo com Gated PixelCNN treinado sobre os códigos discretos do VQ-VAE.",
-    "path": "vqvae-pixelcnn"
+    "path": "vqvae-gated-pixelcnn"
   },
   {
     "id": "vqvae2-pixelcnn",
     "type": "standard",
     "titulo": "Gated PixelCNN no VQ-VAE 2",
     "descrição": "Prior autorregressivo com Gated PixelCNN sobre a hierarquia de dois níveis do VQ-VAE 2.",
-    "path": "vqvae2-pixelcnn"
+    "path": "vqvae2-gated-pixelcnn"
   },
   {
     "id": "jukebox",
@@ -41,22 +41,16 @@
     "descrição": "Modelo principal: priors autorregressivos baseados em Transformers treinados sobre cada nível de uma hierarquia VQ-VAE de 3 níveis, adaptada do Jukebox (Dhariwal et al., 2020).",
     "subsections": [
       {
-        "id": "jukebox-top",
-        "titulo": "Nível Superior",
-        "descrição": "Prior do nível mais abstrato da hierarquia, responsável pela estrutura de longo alcance.",
-        "path": "jukebox/top"
+        "id": "jukebox-samples",
+        "titulo": "Amostras Geradas",
+        "descrição": "Trechos individuais gerados pelo modelo.",
+        "path": "jukebox/samples"
       },
       {
-        "id": "jukebox-mid",
-        "titulo": "Nível Intermediário",
-        "descrição": "Prior do nível intermediário, condicionado ao nível superior.",
-        "path": "jukebox/mid"
-      },
-      {
-        "id": "jukebox-bottom",
-        "titulo": "Nível Inferior",
-        "descrição": "Prior do nível mais fino, condicionado aos níveis superiores. Produz o áudio final após decodificação.",
-        "path": "jukebox/bottom"
+        "id": "jukebox-full-song",
+        "titulo": "Música Completa (Janelamento)",
+        "descrição": "Geração de uma música completa por meio de janelamento sobre os priors.",
+        "path": "jukebox/full_song_windowed"
       }
     ]
   }
