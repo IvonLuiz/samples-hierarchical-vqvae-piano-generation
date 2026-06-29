@@ -38,6 +38,13 @@ function BaselineSection({ section }) {
           <div key={model.id} className="baseline-model">
             <h3 className="baseline-model-title">{model.titulo}</h3>
             <p className="section-desc">{model.descrição}</p>
+            {model.referencia && (
+              <p className="baseline-reference">
+                <a href={model.referencia.url} target="_blank" rel="noopener noreferrer">
+                  {model.referencia.texto}
+                </a>
+              </p>
+            )}
             <AudioGrid path={model.path} />
           </div>
         ))}
@@ -103,7 +110,10 @@ export default function App() {
   return (
     <div className="app">
       <header className="site-header">
-        <h1>Áudios — Amostras</h1>
+        <h1>Arquiteturas Generativas para Músicas de Piano</h1>
+        <p className="site-subtitle">
+          Representações Latentes Discretas e Espectrogramas Mel — amostras de áudio
+        </p>
       </header>
 
       <nav className="toc">

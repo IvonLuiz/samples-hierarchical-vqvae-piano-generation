@@ -1,56 +1,64 @@
 [
   {
-    "id": "baseline",
-    "type": "baseline",
-    "titulo": "Modelos de Referência",
-    "descrição": "Amostras de modelos não implementados por mim, disponíveis na literatura.",
-    "models": [
+    "id": "jukebox",
+    "type": "featured",
+    "titulo": "Transformers no VQ-VAE de 3 Níveis",
+    "subtitulo": "Adaptado do Jukebox (Dhariwal et al., 2020)",
+    "descrição": "Modelo principal deste trabalho: uma adaptação reduzida do Jukebox para espectrogramas Mel de piano. A hierarquia é composta por três VQ-VAEs independentes — top, middle e bottom —, cada uma associada a um prior autorregressivo baseado em Transformers condicionais. Os níveis superiores capturam a estrutura temporal mais ampla da música, enquanto os inferiores refinam os detalhes locais do espectrograma.",
+    "subsections": [
       {
-        "id": "melnet",
-        "titulo": "MelNet",
-        "descrição": "Modelo autorregressivo que opera sobre espectrogramas mel em múltiplas resoluções.",
-        "path": "melnet"
+        "id": "jukebox-samples",
+        "titulo": "Amostras Geradas",
+        "descrição": "Trechos individuais gerados de forma hierárquica (top → middle → bottom), por amostragem ancestral ou por amostragem preparada (primed sampling), com condicionamento por tonalidade e tempo.",
+        "path": "jukebox/samples"
       },
       {
-        "id": "wavenet",
-        "titulo": "WaveNet",
-        "descrição": "Rede convolucional dilatada que gera áudio amostra por amostra no domínio do tempo.",
-        "path": "wavenet"
+        "id": "jukebox-full-song",
+        "titulo": "Música Completa (Janela Deslizante)",
+        "descrição": "Geração de músicas com duração maior que a janela de treino, por meio de janela deslizante (sliding window) com sobreposição entre trechos consecutivos.",
+        "path": "jukebox/full_song_windowed"
       }
     ]
-  },
-  {
-    "id": "vqvae-pixelcnn",
-    "type": "standard",
-    "titulo": "Gated PixelCNN no VQ-VAE",
-    "descrição": "Prior autorregressivo com Gated PixelCNN treinado sobre os códigos discretos do VQ-VAE.",
-    "path": "vqvae-gated-pixelcnn"
   },
   {
     "id": "vqvae2-pixelcnn",
     "type": "standard",
     "titulo": "Gated PixelCNN no VQ-VAE 2",
-    "descrição": "Prior autorregressivo com Gated PixelCNN sobre a hierarquia de dois níveis do VQ-VAE 2.",
+    "descrição": "Modelo hierárquico de dois níveis (bottom e top): os códigos discretos da VQ-VAE-2 são modelados por priors Gated PixelCNN específicos para cada nível, combinando estrutura global com detalhes locais do espectrograma.",
     "path": "vqvae2-gated-pixelcnn"
   },
   {
-    "id": "jukebox",
-    "type": "featured",
-    "titulo": "Transformers no VQ-VAE de 3 Níveis",
-    "subtitulo": "Adaptado do Jukebox",
-    "descrição": "Modelo principal: priors autorregressivos baseados em Transformers treinados sobre cada nível de uma hierarquia VQ-VAE de 3 níveis, adaptada do Jukebox (Dhariwal et al., 2020).",
-    "subsections": [
+    "id": "vqvae-pixelcnn",
+    "type": "standard",
+    "titulo": "Gated PixelCNN no VQ-VAE",
+    "descrição": "Modelo de nível único: a VQ-VAE comprime o espectrograma Mel em um único espaço latente discreto, sobre o qual uma Gated PixelCNN é treinada como prior autorregressivo.",
+    "path": "vqvae-gated-pixelcnn"
+  },
+  {
+    "id": "baseline",
+    "type": "baseline",
+    "titulo": "Modelos de Referência",
+    "descrição": "Amostras de modelos da literatura, não implementados neste trabalho, usados como referência de qualidade para os modelos propostos.",
+    "models": [
       {
-        "id": "jukebox-samples",
-        "titulo": "Amostras Geradas",
-        "descrição": "Trechos individuais gerados pelo modelo.",
-        "path": "jukebox/samples"
+        "id": "melnet",
+        "titulo": "MelNet",
+        "descrição": "Modelo autorregressivo que opera diretamente sobre espectrogramas Mel em múltiplas resoluções, sem quantização vetorial.",
+        "path": "melnet",
+        "referencia": {
+          "texto": "VASQUEZ, S.; LEWIS, M. MelNet: A Generative Model for Audio in the Frequency Domain. 2019.",
+          "url": "https://arxiv.org/abs/1906.01083"
+        }
       },
       {
-        "id": "jukebox-full-song",
-        "titulo": "Música Completa (Janelamento)",
-        "descrição": "Geração de uma música completa por meio de janelamento sobre os priors.",
-        "path": "jukebox/full_song_windowed"
+        "id": "wavenet",
+        "titulo": "WaveNet",
+        "descrição": "Rede convolucional com convoluções causais dilatadas que gera áudio amostra por amostra no domínio do tempo.",
+        "path": "wavenet",
+        "referencia": {
+          "texto": "OORD, A. van den et al. WaveNet: A Generative Model for Raw Audio. 2016.",
+          "url": "https://arxiv.org/abs/1609.03499"
+        }
       }
     ]
   }

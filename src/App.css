@@ -24,6 +24,12 @@
   color: var(--text-h);
 }
 
+.site-subtitle {
+  margin: 8px 0 0;
+  font-size: 1rem;
+  color: var(--text);
+}
+
 /* ── Table of Contents ───────────────────────────────── */
 .toc {
   margin-bottom: 56px;
@@ -144,6 +150,20 @@
   margin: 0 0 6px;
   font-size: 1.1rem;
   color: var(--text-h);
+}
+
+.baseline-reference {
+  margin: -16px 0 20px;
+  font-size: 0.82rem;
+}
+
+.baseline-reference a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.baseline-reference a:hover {
+  text-decoration: underline;
 }
 
 /* ── Featured Subsections ────────────────────────────── */
